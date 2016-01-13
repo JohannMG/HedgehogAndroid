@@ -3,4 +3,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="hedgehogFacts">Did you know long text is long lorem ipsum dolor sit amet</string>
+    <string name="nextButton">Next</string>
+    <string name="fact2">Hedgehogs are something something fact 2 to be replaced</string>
 </resources>
