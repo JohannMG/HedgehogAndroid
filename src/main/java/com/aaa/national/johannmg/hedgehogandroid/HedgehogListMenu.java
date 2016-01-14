@@ -2,13 +2,17 @@ package com.aaa.national.johannmg.hedgehogandroid;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class HedgehogListMenu extends AppCompatActivity {
+public class HedgehogListMenu extends AppCompatActivity
+        implements AdapterView.OnItemClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,7 @@ public class HedgehogListMenu extends AppCompatActivity {
         NavItemsAdapter navAdapter = new NavItemsAdapter(this, arrayOfItems);
         ListView listView = (ListView) findViewById(R.id.menuListView);
         listView.setAdapter(navAdapter);
+        listView.setOnItemClickListener(this);
 
 
     }
@@ -48,5 +53,24 @@ public class HedgehogListMenu extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        switch (position){
+            //day night hedgehog application
+            case 0:
+                break;
 
+            //weather application
+            case 1:
+                break;
+
+            //Hedgehog run
+            case 2:
+                break;
+
+            //surprise?
+            default:
+                break;
+        }
+    }
 }
