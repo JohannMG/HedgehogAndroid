@@ -15,7 +15,6 @@ public class MenuNavItem {
     public MenuNavItem(String text){
         navText = text;
         navImage = R.mipmap.hedgehog1;
-
     }
 
 

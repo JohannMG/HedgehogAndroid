@@ -6,12 +6,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 public class HedgehogListMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hedgehog_list_menu);
+
+
+        ArrayList<MenuNavItem> arrayOfItems = new ArrayList<MenuNavItem>();
+        arrayOfItems.add( new MenuNavItem("First Item" ));
+        arrayOfItems.add(new MenuNavItem("Second Item"));
+        NavItemsAdapter navAdapter = new NavItemsAdapter(this, arrayOfItems);
+        ListView listView = (ListView) findViewById(R.id.menuListView);
+        listView.setAdapter(navAdapter);
+
+
     }
 
     @Override
