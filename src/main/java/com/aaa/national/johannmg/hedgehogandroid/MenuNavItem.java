@@ -4,6 +4,8 @@ import android.widget.ImageView;
 
 import org.json.JSONArray;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -21,9 +23,20 @@ public class MenuNavItem {
         navImage = R.mipmap.hedgehog1;
     }
 
-    public static ArrayList<MenuNavItem> getNavItemsFromJsonFile(JSONArray items){
+    public static ArrayList<MenuNavItem> getNavItemsFromJsonFile(String filename){
         ArrayList<MenuNavItem> navigationItems = new ArrayList<MenuNavItem>();
 
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new InputStreamReader(  );
+        }
+
+        catch (Exception e){
+
+        }
+        finally {
+
+        }
 
 
         return navigationItems;
