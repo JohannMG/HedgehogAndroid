@@ -6,4 +6,6 @@
     <string name="hedgehogFacts">Did you know long text is long lorem ipsum dolor sit amet</string>
     <string name="nextButton">Next</string>
     <string name="fact2">Hedgehogs are something something fact 2 to be replaced</string>
+    <string name="fact3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tincidunt placerat rhoncus. Vivamus eget aliquet sem. Aliquam lacinia, dolor vitae elementum hendrerit, tortor purus laoreet.</string>
+    <string name="title_activity_hedgehog_list_menu">HedgehogListMenu</string>
 </resources>
