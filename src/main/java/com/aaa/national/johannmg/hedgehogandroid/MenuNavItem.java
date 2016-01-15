@@ -1,11 +1,14 @@
 package com.aaa.national.johannmg.hedgehogandroid;
 
+import android.util.Log;
 import android.widget.ImageView;
 
 import org.json.JSONArray;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.Buffer;
 import java.util.ArrayList;
 
 /**
@@ -17,22 +20,55 @@ public class MenuNavItem {
 
     public String navText;
     public int navImage;
+    private static final String DEBUG_NAME = "NavMenuItem_Class";
 
     public MenuNavItem(String text){
         navText = text;
         navImage = R.mipmap.hedgehog1;
     }
 
-    public static ArrayList<MenuNavItem> getNavItemsFromJsonFile(String filename){
-        ArrayList<MenuNavItem> navigationItems = new ArrayList<MenuNavItem>();
+    public static ArrayList<MenuNavItem> getNavItemsFromJsonFile(InputStream fileStream){
 
-        BufferedReader reader;
+        ArrayList<MenuNavItem> navigationItems = new ArrayList<MenuNavItem>();
+        if (fileStream == null){
+            return  navigationItems;
+        }
+
+        String fileInput = null;
         try {
-            reader = new BufferedReader(new InputStreamReader(  );
+            int size = fileStream.available();
+            byte[] buffer = new byte[size];
+            fileStream.read(buffer);
+            fileStream.close();
+            fileInput = new String(buffer, "UTF-8");
+
         }
 
         catch (Exception e){
+            fileStream = null;
+            Log.d(DEBUG_NAME, "Problem opening file");
+            Log.d(DEBUG_NAME, e.getMessage());
+            return navigationItems;
+        }
+        finally {
 
+        }
+
+        //json
+
+        try{
+            JSONArray jsonArray = new JSONArray(fileInput);
+            if (jsonArray!= null){
+                for (int i = 0; i < jsonArray.length(); i ++){
+                    navigationItems.add(  new MenuNavItem( jsonArray.get(i).toString() )  );
+                }
+            }
+        }
+
+        catch (Exception e){
+            Log.d(DEBUG_NAME, "Problem Parsing JSON string to array");
+            Log.d(DEBUG_NAME, e.getMessage());
+            return navigationItems;
         }
         finally {
 

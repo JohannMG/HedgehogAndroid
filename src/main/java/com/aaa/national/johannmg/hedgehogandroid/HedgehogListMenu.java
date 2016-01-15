@@ -9,10 +9,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class HedgehogListMenu extends AppCompatActivity
         implements AdapterView.OnItemClickListener{
+
+    public static final String DEBUG_TAG = "HedgehogListMenu_Class";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +23,19 @@ public class HedgehogListMenu extends AppCompatActivity
         setContentView(R.layout.activity_hedgehog_list_menu);
 
 
-        ArrayList<MenuNavItem> arrayOfItems = new ArrayList<MenuNavItem>();
-        arrayOfItems.add( new MenuNavItem("First Item" ));
-        arrayOfItems.add(new MenuNavItem("Second Item"));
+        ArrayList<MenuNavItem> arrayOfItems = null;
+
+
+        try{
+            InputStream fileStream= getAssets().open("menuData.json");
+            arrayOfItems = MenuNavItem.getNavItemsFromJsonFile(fileStream);
+
+        }
+        catch (Exception e){
+            arrayOfItems = new ArrayList<MenuNavItem>();
+            arrayOfItems.add( new MenuNavItem("Menu Item not Found" ));
+        }
+
         NavItemsAdapter navAdapter = new NavItemsAdapter(this, arrayOfItems);
         ListView listView = (ListView) findViewById(R.id.menuListView);
         listView.setAdapter(navAdapter);
