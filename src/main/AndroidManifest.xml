@@ -20,6 +20,14 @@
             android:name=".HedgehogListMenu"
             android:label="@string/title_activity_hedgehog_list_menu" >
         </activity>
+        <activity
+            android:name=".DayNight"
+            android:label="@string/title_activity_day_night" >
+        </activity>
+        <activity
+            android:name=".DayNightOptions"
+            android:label="@string/title_activity_day_night_options" >
+        </activity>
     </application>
 
 </manifest>

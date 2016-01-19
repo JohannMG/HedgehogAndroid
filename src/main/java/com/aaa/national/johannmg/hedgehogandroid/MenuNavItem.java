@@ -4,8 +4,10 @@ import android.util.Log;
 import android.widget.ImageView;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.Buffer;
@@ -44,7 +46,7 @@ public class MenuNavItem {
 
         }
 
-        catch (Exception e){
+        catch (IOException e){
             fileStream = null;
             Log.d(DEBUG_NAME, "Problem opening file");
             Log.d(DEBUG_NAME, e.getMessage());
@@ -65,7 +67,7 @@ public class MenuNavItem {
             }
         }
 
-        catch (Exception e){
+        catch ( JSONException e){
             Log.d(DEBUG_NAME, "Problem Parsing JSON string to array");
             Log.d(DEBUG_NAME, e.getMessage());
             return navigationItems;

@@ -1,5 +1,6 @@
 package com.aaa.national.johannmg.hedgehogandroid;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -71,7 +72,8 @@ public class HedgehogListMenu extends AppCompatActivity
         switch (position){
             //day night hedgehog application
             case 0:
-                break;
+                Intent daynight = new Intent(this, DayNight.class);
+                startActivity(daynight);
 
             //weather application
             case 1:
