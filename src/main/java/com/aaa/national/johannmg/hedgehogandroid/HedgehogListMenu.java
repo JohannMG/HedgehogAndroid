@@ -84,6 +84,8 @@ public class HedgehogListMenu extends AppCompatActivity
 
             //Hedgehog run
             case 2:
+                Intent run = new Intent(this, SonicRun.class);
+                startActivity(run);
                 break;
 
             //surprise?

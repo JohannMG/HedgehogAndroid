@@ -12,4 +12,5 @@
     <string name="daynightoptionbtn">Options</string>
     <string name="title_activity_day_night_options">DayNightOptions</string>
     <string name="title_activity_critter_weather">CritterWeather</string>
+    <string name="title_activity_sonic_rub">SonicRub</string>
 </resources>

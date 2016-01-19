@@ -131,15 +131,13 @@ public class HedgehogStart extends AppCompatActivity {
             hogimg3.setAlpha(1.0f);
 
             TranslateAnimation tx = new TranslateAnimation(
-                    Animation.RELATIVE_TO_PARENT,  offsetX,
-                    Animation.RELATIVE_TO_PARENT, 0f,
-                    Animation.RELATIVE_TO_PARENT, offsetY,
-                    Animation.RELATIVE_TO_PARENT, 0f);
+                    offsetX, 0 ,
+                    offsetY, 0
+            );
             AlphaAnimation aa = new AlphaAnimation(0,1);
 
             AnimationSet aSet = new AnimationSet(false);
-            aSet.setFillBefore(true);
-            aSet.setFillEnabled(true);
+            aSet.setFillAfter(true);
             aSet.setInterpolator(new DecelerateInterpolator());
             aSet.addAnimation(tx);
             aSet.addAnimation(aa);

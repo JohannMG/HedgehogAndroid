@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    android:paddingBottom="0dp"
+    tools:context="com.aaa.national.johannmg.hedgehogandroid.SonicRun"
+    android:id="@+id/sonicLayoutView">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sonicRunImg"
+        android:src="@mipmap/sonic"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/sonicRunButton"
+        android:layout_marginTop="63dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RUN!"
+        android:id="@+id/sonicRunButton"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="runSonic"/>
+</RelativeLayout>

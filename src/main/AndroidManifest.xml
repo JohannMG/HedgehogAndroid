@@ -4,14 +4,13 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <activity
             android:name=".HedgehogStart"
             android:label="@string/app_name" >
@@ -36,6 +35,14 @@
         <activity
             android:name=".CritterWeather"
             android:label="@string/title_activity_critter_weather"
+            android:parentActivityName=".HedgehogListMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.aaa.national.johannmg.hedgehogandroid.HedgehogListMenu" />
+        </activity>
+        <activity
+            android:name=".SonicRun"
+            android:label="@string/title_activity_sonic_rub"
             android:parentActivityName=".HedgehogListMenu" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
