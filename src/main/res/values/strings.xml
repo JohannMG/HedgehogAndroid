@@ -11,4 +11,5 @@
     <string name="title_activity_day_night">DayNight</string>
     <string name="daynightoptionbtn">Options</string>
     <string name="title_activity_day_night_options">DayNightOptions</string>
+    <string name="title_activity_critter_weather">CritterWeather</string>
 </resources>

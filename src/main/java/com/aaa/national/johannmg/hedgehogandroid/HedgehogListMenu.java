@@ -74,9 +74,12 @@ public class HedgehogListMenu extends AppCompatActivity
             case 0:
                 Intent daynight = new Intent(this, DayNight.class);
                 startActivity(daynight);
+                break;
 
             //weather application
             case 1:
+                Intent weather = new Intent(this, CritterWeather.class);
+                startActivity(weather);
                 break;
 
             //Hedgehog run
